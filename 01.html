@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shree Multi Services · 2026</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f0f5fa;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      color: #0b2a3b;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 3rem;
+    }
+
+    /* ---------- HEADER / LOGO ---------- */
+    .brand-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      gap: 1rem 2rem;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-icon {
+      background: linear-gradient(145deg, #0b2a3b, #1d5469);
+      color: #fbbf24;
+      width: 68px;
+      height: 68px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      box-shadow: 0 8px 20px rgba(0,20,30,0.2);
+    }
+
+    .logo-text h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0b2a3b;
+    }
+
+    .logo-text span {
+      display: block;
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: #2e5f70;
+      letter-spacing: 0.2px;
+    }
+
+    .year-badge {
+      background: #dce8ef;
+      padding: 0.3rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #154b5c;
+      border: 1px solid #b8cfdb;
+    }
+
+    /* ---------- HERO with video background ---------- */
+    .hero {
+      position: relative;
+      border-radius: 3rem;
+      overflow: hidden;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 18px 40px rgba(0, 20, 30, 0.25);
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.5) saturate(0.8);
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 3rem 2.5rem;
+      color: white;
+      width: 100%;
+      backdrop-filter: blur(2px);
+      background: rgba(11, 42, 59, 0.35);
+    }
+
+    .hero-overlay h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      max-width: 800px;
+    }
+
+    .hero-overlay h2 i {
+      color: #fbbf24;
+      margin-right: 10px;
+    }
+
+    .hero-overlay p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+      margin-top: 0.8rem;
+      border-left: 5px solid #fbbf24;
+      padding-left: 1.5rem;
+      max-width: 600px;
+      font-weight: 300;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.5rem;
+      margin-top: 2rem;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(4px);
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      border: 1px solid rgba(255,255,255,0.1);
+      width: fit-content;
+    }
+
+    .hero-stats span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 500;
+    }
+
+    .hero-stats i {
+      color: #fbbf24;
+    }
+
+    /* ---------- VISION MISSION ---------- */
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .vm-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 2.2rem;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 10px 28px rgba(0, 20, 30, 0.04);
+      border: 1px solid rgba(255,255,255,0.5);
+      transition: 0.25s ease;
+    }
+
+    .vm-card:hover {
+      border-color: #b3ccd9;
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(0, 40, 60, 0.08);
+    }
+
+    .vm-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 0.8rem;
+      color: #0b2a3b;
+    }
+
+    .vm-card h3 i {
+      color: #1a6b7e;
+      font-size: 1.7rem;
+    }
+
+    .vm-card p {
+      color: #1a3e4d;
+      font-size: 1.05rem;
+      font-weight: 400;
+    }
+
+    /* ---------- WHY CHOOSE ---------- */
+    .why-ribbon {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 3rem;
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem 2.5rem;
+      border: 1px solid rgba(255,255,255,0.6);
+      margin: 1.8rem 0 2.5rem;
+    }
+
+    .why-ribbon-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      color: #103946;
+      font-size: 0.95rem;
+    }
+
+    .why-ribbon-item i {
+      color: #1d6b7e;
+      font-size: 1.3rem;
+      width: 1.8rem;
+      text-align: center;
+    }
+
+    /* ---------- SECTION TITLE ---------- */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 3rem 0 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      border-bottom: 4px solid rgba(209, 224, 233, 0.5);
+      padding-bottom: 0.6rem;
+      letter-spacing: -0.3px;
+    }
+
+    .section-title i {
+      color: #1a6b7e;
+      font-size: 2rem;
+    }
+
+    /* ---------- SERVICE TAGS ---------- */
+    .service-tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+    }
+
+    .service-tag {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(4px);
+      padding: 0.6rem 1.6rem;
+      border-radius: 60px;
+      border: 1px solid rgba(203, 221, 231, 0.6);
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.15s;
+      font-size: 0.95rem;
+    }
+
+    .service-tag i {
+      color: #1d6b7e;
+      width: 1.2rem;
+    }
+
+    .service-tag:hover {
+      background: rgba(255,255,255,0.9);
+      border-color: #88b2c4;
+      transform: scale(0.97);
+    }
+
+    .block-card {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 2.5rem;
+      padding: 1.8rem 2.2rem;
+      margin: 1.2rem 0 1.8rem;
+      border: 1px solid rgba(218, 230, 238, 0.5);
+      box-shadow: 0 4px 14px rgba(0, 20, 30, 0.02);
+    }
+
+    .block-card .block-label {
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.8rem;
+      color: #124455;
+    }
+
+    /* ---------- T-SHIRT / IMAGE SIMULATION ---------- */
+    .tshirt-showcase {
+      background: rgba(234, 242, 248, 0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 2.5rem;
+      padding: 1.8rem 2.2rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(195, 215, 227, 0.5);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .tshirt-desc {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem 1.5rem;
+    }
+
+    .tshirt-desc i {
+      font-size: 2.8rem;
+      color: #1a6b7e;
+    }
+
+    .tshirt-desc strong {
+      font-size: 1.1rem;
+    }
+
+    .mockup-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .mockup-img {
+      background: rgba(211, 224, 233, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 2rem;
+      padding: 0.8rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      border: 1px solid rgba(178, 201, 214, 0.5);
+      font-weight: 500;
+      color: #15404f;
+    }
+
+    .mockup-img i {
+      font-size: 1.8rem;
+      color: #1d6b7e;
+    }
+
+    /* ---------- CLIENTS (from image) ---------- */
+    .clients-section {
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 2.5rem;
+      padding: 2rem 2.2rem;
+      margin: 2.5rem 0 2rem;
+      border: 1px solid rgba(218, 230, 238, 0.4);
+      box-shadow: 0 4px 14px rgba(0, 20, 30, 0.02);
+    }
+
+    .clients-section .section-title {
+      margin-top: 0;
+      border-bottom-color: #fbbf24;
+    }
+
+    .clients-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem 2.8rem;
+      padding: 0.5rem 0;
+    }
+
+    .client-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #15404f;
+      text-align: center;
+      min-width: 90px;
+      transition: 0.2s;
+      padding: 0.3rem 0.6rem;
+      border-radius: 1.5rem;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(2px);
+    }
+
+    .client-item i {
+      font-size: 2.2rem;
+      color: #1a6b7e;
+      margin-bottom: 0.2rem;
+      opacity: 0.7;
+      transition: 0.2s;
+    }
+
+    .client-item:hover {
+      background: rgba(255,255,255,0.5);
+      transform: translateY(-2px);
+    }
+
+    .client-item:hover i {
+      opacity: 1;
+      transform: scale(1.05);
+      color: #fbbf24;
+    }
+
+    .client-item .brand-sub {
+      font-size: 0.7rem;
+      font-weight: 400;
+      opacity: 0.6;
+      letter-spacing: 0.3px;
+      margin-top: 2px;
+    }
+
+    /* ---------- CONTACT / OUTLET ---------- */
+    .contact-block {
+      background: #0b2a3b;
+      color: white;
+      border-radius: 3rem;
+      padding: 2.5rem 2.8rem;
+      margin-top: 3.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .contact-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .contact-left a {
+      color: #f0faff;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255,255,255,0.15);
+      padding-bottom: 2px;
+      transition: 0.1s;
+    }
+
+    .contact-left a:hover {
+      border-bottom-color: #fbbf24;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .contact-item i {
+      color: #fbbf24;
+      width: 1.6rem;
+      font-size: 1.1rem;
+    }
+
+    .outlet-chip {
+      background: rgba(255,255,255,0.05);
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .outlet-chip span {
+      opacity: 0.85;
+      font-size: 0.9rem;
+    }
+
+    .outlet-chip strong {
+      opacity: 1;
+      color: #fbbf24;
+    }
+
+    .address-block {
+      background: rgba(238, 245, 249, 0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 3rem;
+      padding: 0.8rem 2rem;
+      margin: 1.8rem 0 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2.5rem;
+      border: 1px solid rgba(203, 221, 231, 0.5);
+      font-size: 0.95rem;
+    }
+
+    .address-block i {
+      color: #1a6b7e;
+      margin-right: 0.3rem;
+    }
+
+    /* ---------- BOTTOM LOGO (from image) ---------- */
+    .bottom-logo-section {
+      margin: 3.5rem 0 1.5rem;
+      padding: 2.5rem 2.5rem;
+      background: linear-gradient(145deg, #0b2a3b, #1b4f62);
+      border-radius: 3.5rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.8rem 2.5rem;
+      box-shadow: 0 12px 32px rgba(0,20,30,0.25);
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bottom-logo-section::after {
+      content: "⏤ 2026";
+      position: absolute;
+      bottom: 1rem;
+      right: 2rem;
+      font-size: 0.8rem;
+      opacity: 0.15;
+      letter-spacing: 2px;
+    }
+
+    .bottom-logo-left {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .bottom-logo-icon {
+      background: #fbbf24;
+      color: #0b2a3b;
+      width: 70px;
+      height: 70px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    .bottom-logo-text .brand-name {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: white;
+    }
+
+    .bottom-logo-text .brand-sub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: 0.8;
+      display: block;
+      color: #fbbf24;
+      letter-spacing: 0.5px;
+    }
+
+    .bottom-tagline {
+      background: rgba(255,255,255,0.06);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      border: 1px solid rgba(255,255,255,0.08);
+      font-weight: 500;
+      font-size: 1.3rem;
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(2px);
+      text-align: center;
+    }
+
+    .bottom-tagline i {
+      color: #fbbf24;
+      margin-right: 0.6rem;
+    }
+
+    .bottom-tagline small {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 300;
+      opacity: 0.6;
+      letter-spacing: 1px;
+      margin-top: 0.2rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px dotted rgba(184, 206, 219, 0.5);
+      margin: 2.8rem 0 0.8rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #385e6b;
+      font-weight: 400;
+      opacity: 0.7;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 740px) {
+      .hero-overlay h2 { font-size: 2.2rem; }
+      .vm-grid { grid-template-columns: 1fr; }
+      .contact-block { flex-direction: column; }
+      .brand-header { flex-direction: column; align-items: flex-start; }
+      .bottom-logo-section { flex-direction: column; align-items: flex-start; }
+      .bottom-tagline { width: 100%; text-align: center; }
+      .clients-grid { gap: 1rem 1.8rem; }
+      .hero-overlay { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ========== HEADER ========== -->
+  <div class="brand-header">
+    <div class="logo-block">
+      <div class="logo-icon"><i class="fas fa-infinity"></i></div>
+      <div class="logo-text">
+        <h1>Shree Multi Service</h1>
+        <span><i class="fas fa-check-circle" style="color:#1a6b7e;"></i> advertising · branding · solutions</span>
+      </div>
+    </div>
+    <div class="year-badge"><i class="far fa-calendar-alt"></i> 2026 · central india</div>
+  </div>
+
+  <!-- ========== HERO with video background ========== -->
+  <div class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      <!-- fallback image if video fails -->
+    </video>
+    <div class="hero-overlay">
+      <h2><i class="fas fa-bolt"></i> We Provide the Best <br>BUSINESS SOLUTIONS</h2>
+      <p>“Chemistry of success at work — trusted by brands across India.”</p>
+      <div class="hero-stats">
+        <span><i class="fas fa-trophy"></i> 14+ years sales & marketing</span>
+        <span><i class="fas fa-map-pin"></i> 7+ states</span>
+        <span><i class="fas fa-rocket"></i> result-driven</span>
+        <span><i class="fas fa-star"></i> 100+ projects</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== VISION & MISSION ========== -->
+  <div class="vm-grid">
+    <div class="vm-card">
+      <h3><i class="fas fa-eye"></i> Vision</h3>
+      <p>“To become the most trusted and result-driven advertising partner, empowering brands to grow through innovative and impactful marketing solutions.”</p>
+    </div>
+    <div class="vm-card">
+      <h3><i class="fas fa-bullseye"></i> Mission</h3>
+      <p>“Our mission is to deliver creative, reliable, and result-oriented advertising services that help our clients increase visibility, build brand value, and achieve measurable business growth.”</p>
+    </div>
+  </div>
+
+  <!-- ========== WHY CHOOSE ========== -->
+  <div class="why-ribbon">
+    <div class="why-ribbon-item"><i class="fas fa-paint-brush"></i> Complete Advertising</div>
+    <div class="why-ribbon-item"><i class="fas fa-lightbulb"></i> Creative & Result</div>
+    <div class="why-ribbon-item"><i class="fas fa-tachometer-alt"></i> Fast & Reliable</div>
+    <div class="why-ribbon-item"><i class="fas fa-user-tie"></i> Experienced Team</div>
+    <div class="why-ribbon-item"><i class="fas fa-tag"></i> Competitive Pricing</div>
+    <div class="why-ribbon-item"><i class="fas fa-share-alt"></i> Strong Network</div>
+    <div class="why-ribbon-item"><i class="fas fa-chart-line"></i> Business Growth</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ========== OUR CLIENTS (from image) ========== -->
+  <div class="clients-section">
+    <h2 class="section-title"><i class="fas fa-handshake"></i> Our Clients · Chemistry of success</h2>
+    <div class="clients-grid">
+      <div class="client-item"><i class="fas fa-motorcycle"></i> TVS <span class="brand-sub">Amul</span></div>
+      <div class="client-item"><i class="fas fa-leaf"></i> UPL <span class="brand-sub">OpenAg™</span></div>
+      <div class="client-item"><i class="fas fa-flask"></i> BAYER <span class="brand-sub">BAYER</span></div>
+      <div class="client-item"><i class="fas fa-seedling"></i> CORTEVA <span class="brand-sub">agriscience</span></div>
+      <div class="client-item"><i class="fas fa-tractor"></i> EICHER <span class="brand-sub">TRACTORS</span></div>
+      <div class="client-item"><i class="fas fa-sun"></i> Syngenta <span class="brand-sub">FUTURE POSITIVE</span></div>
+      <div class="client-item"><i class="fas fa-pills"></i> Agrovet <span class="brand-sub">Agrovet</span></div>
+      <div class="client-item"><i class="fas fa-dna"></i> BIOSTADT <span class="brand-sub">SWAL</span></div>
+      <div class="client-item"><i class="fas fa-tractor"></i> SML <span class="brand-sub">Transforming Agriculture</span></div>
+      <div class="client-item"><i class="fas fa-flask"></i> MOL <span class="brand-sub">CHEMISTRY OF SUCCESS</span></div>
+      <div class="client-item"><i class="fas fa-flask"></i> Valagro <span class="brand-sub">Where science serves</span></div>
+      <div class="client-item"><i class="fas fa-industry"></i> GHARDA <span class="brand-sub">CHEMICALS LIMITED</span></div>
+      <div class="client-item"><i class="fas fa-bolt"></i> I2U <span class="brand-sub">12U</span></div>
+      <div class="client-item"><i class="fas fa-seedling"></i> RAAMKAY <span class="brand-sub">An Agricultural Sciences Co.</span></div>
+      <div class="client-item"><i class="fas fa-tractor"></i> IFFCO <span class="brand-sub">YARA</span></div>
+      <div class="client-item"><i class="fas fa-handshake"></i> Rama <span class="brand-sub">Building Trust Together</span></div>
+      <div class="client-item"><i class="fas fa-flask"></i> ICL <span class="brand-sub">AICL</span></div>
+      <div class="client-item"><i class="fas fa-seedling"></i> RASI SEEDS <span class="brand-sub">RASI</span></div>
+      <div class="client-item"><i class="fas fa-seedling"></i> mahyco <span class="brand-sub">EVERY SEED COUNTS</span></div>
+      <div class="client-item"><i class="fas fa-seedling"></i> Seminis <span class="brand-sub">Grow Forward</span></div>
+      <div class="client-item"><i class="fas fa-leaf"></i> Kalash <span class="brand-sub">Let’s grow!</span></div>
+      <div class="client-item"><i class="fas fa-tractor"></i> CHAMBAL <span class="brand-sub">Better Science. Better Harvest.</span></div>
+      <div class="client-item"><i class="fas fa-seedling"></i> RASI <span class="brand-sub">RASI</span></div>
+      <div class="client-item"><i class="fas fa-seedling"></i> RASHI <span class="brand-sub">RASHI</span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ========== VAN BRANDING ========== -->
+  <h2 class="section-title"><i class="fas fa-truck"></i> Van branding & demo vans</h2>
+  <div class="block-card">
+    <div class="block-label"><i class="fas fa-van-shuttle"></i> Van solutions</div>
+    <div class="service-tag-group">
+      <span class="service-tag"><i class="fas fa-shapes"></i> L SHAPE</span>
+      <span class="service-tag"><i class="fas fa-pen-ruler"></i> CUSTOMIZE</span>
+      <span class="service-tag"><i class="fas fa-paint-roller"></i> VAN BRANDING</span>
+      <span class="service-tag"><i class="fas fa-led"></i> LED DEMO VAN</span>
+      <span class="service-tag"><i class="fas fa-home"></i> HUT SHAPE</span>
+      <span class="service-tag"><i class="fas fa-tshirt"></i> T SHAPE</span>
+      <span class="service-tag"><i class="fas fa-tv"></i> TVS BRANDING</span>
+    </div>
+  </div>
+
+  <!-- ========== SHOP BRANDING ========== -->
+  <h2 class="section-title"><i class="fas fa-store"></i> Shop branding & boards</h2>
+  <div class="service-tag-group" style="margin-bottom:1.2rem;">
+    <span class="service-tag"><i class="fas fa-sign-hanging"></i> Shop branding</span>
+    <span class="service-tag"><i class="fas fa-sync"></i> Fix & rotating</span>
+    <span class="service-tag"><i class="fas fa-circle"></i> Non-light board</span>
+    <span class="service-tag"><i class="fas fa-border-all"></i> Frame board</span>
+    <span class="service-tag"><i class="fas fa-archway"></i> Arch gate</span>
+    <span class="service-tag"><i class="fas fa-flag"></i> Glow sign</span>
+    <span class="service-tag"><i class="fas fa-cube"></i> Acrylic board</span>
+    <span class="service-tag"><i class="fas fa-scroll"></i> Fix vinyl</span>
+    <span class="service-tag"><i class="fas fa-clipboard"></i> GSB / Racky</span>
+  </div>
+
+  <!-- ========== HOARDING ========== -->
+  <h2 class="section-title"><i class="fas fa-billboard"></i> Hoarding & installation</h2>
+  <div class="service-tag-group" style="margin-bottom:1.2rem;">
+    <span class="service-tag"><i class="fas fa-th"></i> Fix hoarding</span>
+    <span class="service-tag"><i class="fas fa-pipe"></i> Pipe fitting</span>
+    <span class="service-tag"><i class="fas fa-lightbulb"></i> LED light</span>
+    <span class="service-tag"><i class="fas fa-sun"></i> Night & day</span>
+    <span class="service-tag"><i class="fas fa-file-signature"></i> NOC form</span>
+    <span class="service-tag"><i class="fas fa-shield-alt"></i> Proof / Racky</span>
+  </div>
+
+  <!-- ========== STALLS ========== -->
+  <h2 class="section-title"><i class="fas fa-tent"></i> Stalls & Agro expo</h2>
+  <div class="service-tag-group" style="margin-bottom:1.2rem;">
+    <span class="service-tag"><i class="fas fa-cube"></i> Customize stall</span>
+    <span class="service-tag"><i class="fas fa-tshirt"></i> Fabric stall</span>
+    <span class="service-tag"><i class="fas fa-seedling"></i> Agro expo</span>
+    <span class="service-tag"><i class="fas fa-calendar-check"></i> Organize meeting</span>
+    <span class="service-tag"><i class="fas fa-camera"></i> Selfie display</span>
+  </div>
+
+  <!-- ========== ROLL UP ========== -->
+  <h2 class="section-title"><i class="fas fa-bag-shopping"></i> Roll up, bags & display</h2>
+  <div class="service-tag-group" style="margin-bottom:1.8rem;">
+    <span class="service-tag"><i class="fas fa-trophy"></i> Regular trophy</span>
+    <span class="service-tag"><i class="fas fa-shopping-bag"></i> Non-oven bag</span>
+    <span class="service-tag"><i class="fas fa-scroll"></i> Roll up standee</span>
+    <span class="service-tag"><i class="fas fa-tape"></i> Tape & banting</span>
+  </div>
+
+  <!-- ========== T-SHIRT MOCKUP ========== -->
+  <div class="tshirt-showcase">
+    <div class="tshirt-desc">
+      <i class="fas fa-tshirt"></i>
+      <div>
+        <strong>30 colour options</strong> · Double tip Polo · 260gsm 100% cotton · pre-shrunk · Male / Female
+      </div>
+      <span style="background: #1d6b7e; color:white; padding:0.1rem 1.2rem; border-radius:40px; font-size:0.8rem; font-weight:600;">apparel</span>
+    </div>
+    <div class="mockup-images">
+      <div class="mockup-img"><i class="fas fa-image"></i> front</div>
+      <div class="mockup-img"><i class="fas fa-image"></i> back</div>
+      <div class="mockup-img"><i class="fas fa-palette"></i> 30 colours</div>
+    </div>
+  </div>
+
+  <!-- ========== MEETING / DISPLAY ========== -->
+  <div style="display:flex; flex-wrap:wrap; gap:1rem 2rem; background:rgba(255,255,255,0.4); backdrop-filter:blur(6px); border-radius:3rem; padding:0.8rem 2rem; border:1px solid rgba(210, 225, 234, 0.4); margin-bottom:1.5rem;">
+    <span><i class="fas fa-handshake" style="color:#1a6b7e;"></i> Meeting</span>
+    <span><i class="fas fa-camera-retro" style="color:#1a6b7e;"></i> Selfie display</span>
+    <span><i class="fas fa-calendar-alt" style="color:#1a6b7e;"></i> Organize meeting</span>
+    <span><i class="fas fa-people-arrows" style="color:#1a6b7e;"></i> Display</span>
+    <span><i class="fas fa-clipboard-check" style="color:#1a6b7e;"></i> Project management</span>
+  </div>
+
+  <!-- ========== CONTACT ========== -->
+  <div class="contact-block">
+    <div class="contact-left">
+      <div class="contact-item"><i class="fas fa-phone-alt"></i> <a href="tel:9420484823">9420484823</a></div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:tushar.diwan@shrimultyservices.co.in">tushar.diwan@shrimultyservices.co.in</a></div>
+      <div class="contact-item"><i class="fas fa-globe"></i> <a href="#">www.shrimultyservices.co.in</a></div>
+    </div>
+    <div>
+      <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.3rem;"><i class="fas fa-map-marker-alt" style="color:#fbbf24;"></i> <strong>Head Office</strong></div>
+      <div style="opacity:0.85;">01 Rangoli Laxmi Apartment, Tirupati Nagar, <br>Kathora Road, Amravati- 444604</div>
+    </div>
+  </div>
+
+  <!-- ========== OUTLET ADDRESSES ========== -->
+  <div class="address-block">
+    <span><i class="fas fa-store"></i> <strong>Working Outlet</strong></span>
+    <span>AKOLA</span> <span>NAGPUR</span> <span>JALNA</span> <span>NASIK</span> <span>SANGLI</span>
+    <span>MP INDORE</span> <span>CG RAIPUR</span> <span>GJ AHMEDABAD</span>
+    <span>KARNATAKA</span> <span>TELANGANA</span>
+  </div>
+
+  <!-- extra location -->
+  <div style="display:flex; flex-wrap:wrap; gap:0.5rem 2rem; background:rgba(240, 246, 250, 0.5); backdrop-filter:blur(4px); border-radius:3rem; padding:0.4rem 2rem; border:1px solid rgba(199, 218, 229, 0.5); font-size:0.9rem;">
+    <span><i class="fas fa-location-dot" style="color:#1a6b7e;"></i> 4M8M+X24, Bhavaninagar, Maharashtra</span>
+    <span><i class="fas fa-location-dot" style="color:#1a6b7e;"></i> Bhavaninagar</span>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ========== BOTTOM LOGO SECTION (from image) ========== -->
+  <div class="bottom-logo-section">
+    <div class="bottom-logo-left">
+      <div class="bottom-logo-icon"><i class="fas fa-infinity"></i></div>
+      <div class="bottom-logo-text">
+        <span class="brand-name">Multy Services</span>
+        <span class="brand-sub"><i class="fas fa-tag"></i> Advertising Material Provider</span>
+      </div>
+    </div>
+    <div class="bottom-tagline">
+      <i class="fas fa-bolt"></i> We Provide the Best <br><small>BUSINESS SOLUTIONS</small>
+    </div>
+  </div>
+
+  <hr />
+  <div class="footer-note">
+    <i class="fas fa-infinity" style="color:#1a6b7e;"></i> Shree Multi Service · trusted partner · 2026
+  </div>
+
+</div> <!-- container -->
+</body>
+</html>
