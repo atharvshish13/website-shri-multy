@@ -1,1436 +1,1306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shree Multi Service | Best Business Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Multi Service | Best Business Solutions</title>
 
-    <!-- Bootstrap 5 + Icons + AOS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <style>
-        /* ── Reset & Base ── */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        :root {
-            --primary: #d42a2a;
-            --primary-dark: #b01e1e;
-            --primary-light: #fce8e8;
-            --secondary: #1a1a2e;
-            --gray-bg: #f8f9fc;
-            --text-dark: #1a1a2e;
-            --text-muted: #5a5a7a;
-            --shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
-            --shadow-hover: 0 20px 50px rgba(212, 42, 42, 0.15);
-            --radius: 16px;
-            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #fff;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        img {
-            max-width: 100%;
-        }
-        .section-padding {
-            padding: 80px 0;
-        }
-        .section-title {
-            font-weight: 700;
-            font-size: 2.6rem;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
-        }
-        .section-subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-        .badge-red {
-            background: var(--primary);
-            color: #fff;
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-        .btn-primary-custom {
-            background: var(--primary);
-            border: none;
-            padding: 12px 34px;
-            border-radius: 50px;
-            font-weight: 600;
-            color: #fff;
-            transition: var(--transition);
-            box-shadow: 0 8px 24px rgba(212, 42, 42, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-primary-custom::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.4s;
-            transform: rotate(25deg);
-        }
-        .btn-primary-custom:hover::after {
-            opacity: 1;
-        }
-        .btn-primary-custom:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 12px 32px rgba(212, 42, 42, 0.4);
-            color: #fff;
-        }
-        .btn-outline-custom {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            padding: 10px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            background: transparent;
-        }
-        .btn-outline-custom:hover {
-            background: var(--primary);
-            color: #fff;
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(212, 42, 42, 0.2);
-        }
+  <style>
+    /* ===== style.css ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --primary: #d42a2a;
+      --primary-dark: #b01e1e;
+      --primary-light: #fce8e8;
+      --secondary: #1a1a2e;
+      --gray-bg: #f8f9fc;
+      --text-dark: #1a1a2e;
+      --text-muted: #5a5a7a;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+      --shadow-hover: 0 20px 50px rgba(212, 42, 42, 0.15);
+      --radius: 16px;
+      --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-        /* ── Floating Particles ── */
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(212, 42, 42, 0.08);
-            pointer-events: none;
-            animation: floatUp linear infinite;
-            z-index: 0;
-        }
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0px) scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-120px) scale(1.2);
-                opacity: 0;
-            }
-        }
+      /* Glass effect variables */
+      --glass-bg: rgba(255, 255, 255, 0.15);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --glass-blur: 12px;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .section-padding {
+      padding: 80px 0;
+    }
+    .section-title {
+      font-weight: 700;
+      font-size: 2.6rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .badge-red {
+      background: var(--primary);
+      color: #fff;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .btn-primary-custom {
+      background: var(--primary);
+      border: none;
+      padding: 12px 34px;
+      border-radius: 50px;
+      font-weight: 600;
+      color: #fff;
+      transition: var(--transition);
+      box-shadow: 0 8px 24px rgba(212, 42, 42, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .btn-primary-custom:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 32px rgba(212, 42, 42, 0.4);
+      color: #fff;
+    }
+    .btn-outline-custom {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      background: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline-custom:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px) scale(1.02);
+    }
 
-        /* ── Gradient Text ── */
-        .gradient-text {
-            background: linear-gradient(135deg, var(--primary), #ff6b6b, var(--primary-dark));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: inline-block;
-            animation: shimmer 4s ease-in-out infinite;
-            background-size: 200% 200%;
-        }
-        @keyframes shimmer {
-            0% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 100% 100%;
-            }
-            100% {
-                background-position: 0% 0%;
-            }
-        }
+    /* ── Glass Effect Classes ── */
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      border-radius: var(--radius);
+    }
+    .glass-light {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
+    .glass-dark {
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
 
-        /* ── Navbar ── */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
-            padding: 12px 0;
-            transition: var(--transition);
-        }
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--primary);
-            letter-spacing: -0.5px;
-        }
-        .navbar-brand span {
-            color: var(--secondary);
-        }
-        .navbar-nav .nav-link {
-            font-weight: 600;
-            color: var(--text-dark);
-            padding: 8px 18px;
-            border-radius: 50px;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            position: relative;
-        }
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 60%;
-        }
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary);
-            background: var(--primary-light);
-        }
-        .nav-cta {
-            background: var(--primary);
-            color: #fff !important;
-            padding: 8px 24px !important;
-            border-radius: 50px;
-        }
-        .nav-cta::after {
-            display: none !important;
-        }
-        .nav-cta:hover {
-            background: var(--primary-dark) !important;
-            color: #fff !important;
-        }
+    /* ── Navbar ── */
+    .navbar {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+      padding: 10px 0;
+      transition: var(--transition);
+    }
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(212, 42, 42, 0.3);
+    }
+    .logo-text .brand-main {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--secondary);
+      letter-spacing: -0.5px;
+    }
+    .logo-text .brand-main span {
+      color: var(--primary);
+    }
+    .logo-text .brand-sub {
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .logo-text .brand-sub .gst {
+      color: var(--primary);
+    }
+    .navbar-nav .nav-link {
+      font-weight: 600;
+      color: var(--text-dark);
+      padding: 8px 18px;
+      border-radius: 50px;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--primary);
+      background: rgba(212, 42, 42, 0.1);
+    }
+    .nav-cta {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 8px 24px !important;
+      border-radius: 50px;
+    }
+    .nav-cta:hover {
+      background: var(--primary-dark) !important;
+      color: #fff !important;
+    }
+    .theme-toggle {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1.4rem;
+      color: var(--text-dark);
+      padding: 6px 12px;
+      border-radius: 50px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .theme-toggle:hover {
+      background: rgba(212, 42, 42, 0.15);
+    }
 
-        /* ── Hero ── */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #faf5ff 0%, #fef3f3 100%);
-            position: relative;
-            overflow: hidden;
-            padding-top: 80px;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -20%;
-            width: 70%;
-            height: 120%;
-            background: radial-gradient(ellipse, rgba(212, 42, 42, 0.06), transparent 70%);
-            pointer-events: none;
-        }
-        .hero h1 {
-            font-weight: 800;
-            font-size: 3.8rem;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            color: var(--secondary);
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 500px;
-            line-height: 1.8;
-            margin-top: 16px;
-        }
-        .hero-stats {
-            margin-top: 48px;
-            display: flex;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-        .hero-stats .stat h3 {
-            font-weight: 800;
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin: 0;
-        }
-        .hero-stats .stat p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-        .hero-image-wrap {
-            position: relative;
-            perspective: 800px;
-            transition: transform 0.1s ease;
-        }
-        .hero-image-wrap img {
-            width: 100%;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-hover);
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .hero-image-wrap:hover img {
-            transform: scale(1.02) rotateY(2deg) rotateX(2deg);
-        }
-        .floating-card {
-            position: absolute;
-            bottom: -20px;
-            left: -20px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            padding: 16px 24px;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            animation: floatCard 3s ease-in-out infinite;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        @keyframes floatCard {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-        .floating-card i {
-            font-size: 2rem;
-            color: var(--primary);
-        }
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #faf5ff 0%, #fef3f3 100%);
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    .hero h1 {
+      font-weight: 800;
+      font-size: 3.8rem;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--secondary);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), #ff6b6b, var(--primary-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+      animation: shimmer 4s ease-in-out infinite;
+      background-size: 200% 200%;
+    }
+    @keyframes shimmer {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+    .hero-stats {
+      margin-top: 48px;
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-stats .stat h3 {
+      font-weight: 800;
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin: 0;
+    }
+    .hero-stats .stat p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
 
-        /* ── About ── */
-        .about-item {
-            background: #fff;
-            padding: 28px 20px;
-            border-radius: var(--radius);
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-bottom: 4px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        .about-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--primary-light), transparent);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        .about-item:hover::before {
-            opacity: 1;
-        }
-        .about-item:hover {
-            transform: translateY(-6px);
-            border-bottom-color: var(--primary);
-            box-shadow: var(--shadow-hover);
-        }
-        .about-item i {
-            font-size: 2.4rem;
-            color: var(--primary);
-            margin-bottom: 12px;
-            position: relative;
-        }
+    /* ── 3D Card Effect ── */
+    .card-3d {
+      perspective: 1000px;
+      transition: transform 0.1s ease;
+    }
+    .card-3d-inner {
+      transition: transform 0.1s ease;
+      transform-style: preserve-3d;
+    }
+    .card-3d:hover .card-3d-inner {
+      transform: rotateY(3deg) rotateX(3deg) scale(1.02);
+    }
 
-        /* ── Services ── */
-        .service-card {
-            background: #fff;
-            border-radius: var(--radius);
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.4s ease;
-        }
-        .service-card:hover::after {
-            transform: scaleX(1);
-        }
-        .service-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
-        }
-        .service-card .icon-wrap {
-            width: 72px;
-            height: 72px;
-            background: var(--primary-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 2rem;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-        .service-card:hover .icon-wrap {
-            background: var(--primary);
-            color: #fff;
-            transform: scale(1.1) rotate(6deg);
-        }
-        .service-card .tag {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: var(--primary);
-            color: #fff;
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            animation: pulseTag 2s infinite;
-        }
-        @keyframes pulseTag {
-            0%,
-            100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
+    /* ── About ── */
+    .about-section {
+      background: var(--gray-bg);
+    }
+    .about-item {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 28px 20px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-bottom: 4px solid transparent;
+      height: 100%;
+    }
+    .about-item:hover {
+      transform: translateY(-6px);
+      border-bottom-color: var(--primary);
+      box-shadow: var(--shadow-hover);
+      background: rgba(255, 255, 255, 0.9);
+    }
+    .about-item i {
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
 
-        /* ── Gallery ── */
-        .gallery-grid .gallery-item {
-            border-radius: var(--radius);
-            overflow: hidden;
-            position: relative;
-            aspect-ratio: 1/1;
-            background: #eee;
-            cursor: pointer;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        .gallery-grid .gallery-item:hover {
-            transform: scale(1.04) rotateY(2deg);
-            box-shadow: var(--shadow-hover);
-            z-index: 2;
-        }
-        .gallery-grid .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        .gallery-grid .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        .gallery-grid .gallery-item .overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-            color: #fff;
-            font-weight: 600;
-        }
-        .gallery-grid .gallery-item:hover .overlay {
-            opacity: 1;
-        }
+    /* ── Services ── */
+    .service-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: var(--radius);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover::after {
+      transform: scaleX(1);
+    }
+    .service-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .service-card .icon-wrap {
+      width: 72px;
+      height: 72px;
+      background: rgba(212, 42, 42, 0.1);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(212, 42, 42, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 2rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+    .service-card:hover .icon-wrap {
+      background: var(--primary);
+      color: #fff;
+      transform: scale(1.1) rotate(6deg);
+    }
+    .service-card .tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
 
-        /* ── Clients Marquee ── */
-        .marquee-wrapper {
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            padding: 20px 0;
-        }
-        .marquee-track {
-            display: inline-block;
-            animation: marquee 28s linear infinite;
-        }
-        .marquee-track .client-logo {
-            display: inline-block;
-            margin: 0 40px;
-            filter: grayscale(1);
-            opacity: 0.6;
-            transition: var(--transition);
-            font-weight: 700;
-            font-size: 1.4rem;
-            color: var(--text-dark);
-        }
-        .marquee-track .client-logo:hover {
-            filter: grayscale(0);
-            opacity: 1;
-            color: var(--primary);
-            transform: scale(1.1);
-        }
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
+    /* ── Gallery ── */
+    .gallery-section {
+      background: var(--gray-bg);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 1/1;
+      background: #eee;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .gallery-item:hover {
+      transform: scale(1.04) rotateY(2deg);
+      box-shadow: var(--shadow-hover);
+      z-index: 2;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+      color: #fff;
+      font-weight: 600;
+    }
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+    .gallery-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .gallery-filter .btn-filter {
+      padding: 8px 24px;
+      border-radius: 50px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .gallery-filter .btn-filter.active,
+    .gallery-filter .btn-filter:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
 
-        /* ── Location Chips ── */
-        .location-chip {
-            display: inline-block;
-            background: #fff;
-            padding: 8px 20px;
-            border-radius: 50px;
-            margin: 6px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-        .location-chip:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-3px) scale(1.04);
-            box-shadow: var(--shadow-hover);
-        }
+    /* ── Clients Grid ── */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .client-chip {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      padding: 12px 10px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.8rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70px;
+    }
+    .client-chip:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-hover);
+      color: var(--primary);
+      background: rgba(255, 255, 255, 0.9);
+    }
+    .client-chip .sub {
+      font-weight: 400;
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .client-chip .bi {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+      color: var(--primary);
+    }
 
-        /* ── Why Cards ── */
-        .why-card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(4px);
-            padding: 32px 24px;
-            border-radius: var(--radius);
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: var(--transition);
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        .why-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--primary), transparent);
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-        .why-card:hover::before {
-            opacity: 0.08;
-        }
-        .why-card:hover {
-            transform: translateY(-6px) scale(1.02);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        .why-card .number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-        }
+    /* ── Location Chips ── */
+    .location-chip {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .location-chip:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px) scale(1.04);
+      background: rgba(255, 255, 255, 0.9);
+    }
 
-        /* ── Contact ── */
-        .contact-info-card {
-            background: var(--gray-bg);
-            padding: 28px;
-            border-radius: var(--radius);
-            margin-bottom: 20px;
-            transition: var(--transition);
-            border-left: 4px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        .contact-info-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle, var(--primary-light), transparent);
-            border-radius: 50%;
-            transform: scale(0);
-            transition: transform 0.5s;
-        }
-        .contact-info-card:hover::after {
-            transform: scale(4);
-        }
-        .contact-info-card:hover {
-            border-left-color: var(--primary);
-            background: var(--primary-light);
-            transform: translateX(6px);
-        }
-        .contact-info-card i {
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin-right: 16px;
-            position: relative;
-            z-index: 1;
-        }
-        .contact-info-card div {
-            position: relative;
-            z-index: 1;
-        }
+    /* ── Why Cards ── */
+    .why-section {
+      background: var(--secondary);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(212, 42, 42, 0.1), transparent 60%);
+      pointer-events: none;
+    }
+    .why-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 32px 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: var(--transition);
+      height: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .why-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: var(--primary);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .why-card .number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
 
-        /* ── Scroll to top ── */
-        #scrollTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            font-size: 1.4rem;
-            box-shadow: 0 8px 24px rgba(212, 42, 42, 0.3);
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
-            animation: pulseBtn 2s infinite;
-        }
-        @keyframes pulseBtn {
-            0%,
-            100% {
-                box-shadow: 0 8px 24px rgba(212, 42, 42, 0.3);
-            }
-            50% {
-                box-shadow: 0 8px 40px rgba(212, 42, 42, 0.6);
-            }
-        }
-        #scrollTop.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        #scrollTop:hover {
-            transform: translateY(-4px) scale(1.1);
-            background: var(--primary-dark);
-        }
+    /* ── Contact ── */
+    .contact-info-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 28px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      transition: var(--transition);
+      border-left: 4px solid transparent;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .contact-info-card:hover {
+      border-left-color: var(--primary);
+      background: rgba(255, 255, 255, 0.85);
+      transform: translateX(6px);
+    }
+    .contact-info-card i {
+      font-size: 1.6rem;
+      color: var(--primary);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .contact-info-card div {
+      flex: 1;
+    }
+    .contact-form .form-control {
+      border-radius: 12px;
+      padding: 14px 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      transition: var(--transition);
+    }
+    .contact-form .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(212, 42, 42, 0.1);
+      background: rgba(255, 255, 255, 0.8);
+    }
+    .contact-form .form-select {
+      border-radius: 12px;
+      padding: 14px 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      transition: var(--transition);
+    }
+    .contact-form .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(212, 42, 42, 0.1);
+    }
 
-        /* ── WhatsApp Float ── */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: #25d366;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35);
-            transition: var(--transition);
-            z-index: 998;
-            animation: floatWA 3s ease-in-out infinite;
-        }
-        @keyframes floatWA {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-6px);
-            }
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.12) rotate(6deg);
-            color: #fff;
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
-        }
+    /* ── Footer ── */
+    .footer {
+      background: var(--secondary);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 48px 0 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(212, 42, 42, 0.08), transparent 60%);
+      pointer-events: none;
+    }
+    .footer h5 {
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .footer a {
+      color: rgba(255, 255, 255, 0.6);
+      transition: var(--transition);
+    }
+    .footer a:hover {
+      color: #fff;
+    }
+    .footer .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      margin-right: 8px;
+      transition: var(--transition);
+      color: #fff;
+    }
+    .footer .social a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
 
-        /* ── Dark Mode overrides ── */
-        body.dark-mode {
-            background: #0f0f1a;
-            color: #eee;
-        }
-        body.dark-mode .navbar {
-            background: rgba(15, 15, 26, 0.95);
-        }
-        body.dark-mode .navbar-brand span {
-            color: #fff;
-        }
-        body.dark-mode .navbar-nav .nav-link {
-            color: #ddd;
-        }
-        body.dark-mode .navbar-nav .nav-link:hover {
-            background: rgba(212, 42, 42, 0.2);
-        }
-        body.dark-mode .hero {
-            background: linear-gradient(135deg, #0f0f1a 0%, #1a0f0f 100%);
-        }
-        body.dark-mode .hero h1 {
-            color: #fff;
-        }
-        body.dark-mode .hero p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        body.dark-mode .hero-stats .stat p {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        body.dark-mode .about-section,
-        body.dark-mode .gallery-section,
-        body.dark-mode .locations-section {
-            background: #151525;
-        }
-        body.dark-mode .about-item,
-        body.dark-mode .vision-mission,
-        body.dark-mode .service-card,
-        body.dark-mode .contact-info-card {
-            background: #1e1e32;
-            color: #eee;
-        }
-        body.dark-mode .about-item p,
-        body.dark-mode .service-card p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        body.dark-mode .vision-mission .vm-item {
-            background: rgba(212, 42, 42, 0.15);
-        }
-        body.dark-mode .marquee-track .client-logo {
-            color: #ddd;
-        }
-        body.dark-mode .location-chip {
-            background: #1e1e32;
-            color: #ddd;
-        }
-        body.dark-mode .contact-form .form-control {
-            background: #1e1e32;
-            border-color: #2a2a42;
-            color: #fff;
-        }
-        body.dark-mode .contact-form .form-control:focus {
-            border-color: var(--primary);
-        }
-        body.dark-mode .floating-card {
-            background: #1e1e32;
-            color: #eee;
-            border-color: #2a2a42;
-        }
-        body.dark-mode .footer {
-            background: #0a0a14;
-        }
-        body.dark-mode .theme-toggle {
-            color: #fff;
-        }
-        body.dark-mode .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        .theme-toggle {
-            background: transparent;
-            border: none;
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            padding: 4px 10px;
-            border-radius: 50px;
-            transition: var(--transition);
-        }
-        .theme-toggle:hover {
-            background: var(--primary-light);
-        }
+    /* ── Floating Elements ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35);
+      transition: var(--transition);
+      z-index: 998;
+      animation: floatWA 3s ease-in-out infinite;
+    }
+    @keyframes floatWA {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.12) rotate(6deg);
+      color: #fff;
+    }
+    #scrollTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(212, 42, 42, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 1.4rem;
+      box-shadow: 0 8px 24px rgba(212, 42, 42, 0.3);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 999;
+      cursor: pointer;
+    }
+    #scrollTop.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    #scrollTop:hover {
+      transform: translateY(-4px) scale(1.1);
+      background: var(--primary-dark);
+    }
 
-        /* ── Responsive ── */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            .section-title {
-                font-size: 2.2rem;
-            }
-            .hero-stats {
-                gap: 24px;
-            }
-        }
-        @media (max-width: 768px) {
-            .hero {
-                padding-top: 100px;
-                text-align: center;
-            }
-            .hero p {
-                margin: 16px auto 0;
-            }
-            .hero-btns {
-                justify-content: center;
-            }
-            .hero-stats {
-                justify-content: center;
-            }
-            .section-padding {
-                padding: 50px 0;
-            }
-            .vision-mission {
-                padding: 24px;
-            }
-            .floating-card {
-                display: none;
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            }
-            .hero-image-wrap:hover img {
-                transform: none;
-            }
-        }
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero-stats .stat h3 {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+    /* ── Dark Mode ── */
+    body.dark-mode {
+      background: #0f0f1a;
+      color: #eee;
+    }
+    body.dark-mode .navbar {
+      background: rgba(15, 15, 26, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    body.dark-mode .navbar-nav .nav-link {
+      color: #ddd;
+    }
+    body.dark-mode .navbar-nav .nav-link:hover {
+      background: rgba(212, 42, 42, 0.2);
+    }
+    body.dark-mode .hero {
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a0f0f 100%);
+    }
+    body.dark-mode .hero h1 {
+      color: #fff;
+    }
+    body.dark-mode .hero p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    body.dark-mode .about-section,
+    body.dark-mode .gallery-section {
+      background: #151525;
+    }
+    body.dark-mode .about-item,
+    body.dark-mode .service-card,
+    body.dark-mode .contact-info-card,
+    body.dark-mode .client-chip {
+      background: rgba(30, 30, 50, 0.6);
+      backdrop-filter: blur(8px);
+      border-color: rgba(255, 255, 255, 0.05);
+      color: #eee;
+    }
+    body.dark-mode .about-item:hover,
+    body.dark-mode .service-card:hover,
+    body.dark-mode .client-chip:hover {
+      background: rgba(30, 30, 50, 0.9);
+    }
+    body.dark-mode .about-item p,
+    body.dark-mode .service-card p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    body.dark-mode .client-chip .sub {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    body.dark-mode .location-chip {
+      background: rgba(30, 30, 50, 0.6);
+      backdrop-filter: blur(6px);
+      border-color: rgba(255, 255, 255, 0.05);
+      color: #ddd;
+    }
+    body.dark-mode .location-chip:hover {
+      background: rgba(30, 30, 50, 0.9);
+    }
+    body.dark-mode .contact-form .form-control,
+    body.dark-mode .contact-form .form-select {
+      background: rgba(30, 30, 50, 0.6);
+      border-color: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+    body.dark-mode .contact-form .form-control:focus {
+      background: rgba(30, 30, 50, 0.9);
+      border-color: var(--primary);
+    }
+    body.dark-mode .footer {
+      background: #0a0a14;
+    }
+    body.dark-mode .theme-toggle {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+    body.dark-mode .theme-toggle:hover {
+      background: rgba(212, 42, 42, 0.2);
+    }
+    body.dark-mode .logo-text .brand-main {
+      color: #fff;
+    }
+    body.dark-mode .gallery-filter .btn-filter {
+      background: rgba(30, 30, 50, 0.4);
+      border-color: rgba(255, 255, 255, 0.05);
+      color: #ddd;
+    }
+    body.dark-mode .gallery-filter .btn-filter.active,
+    body.dark-mode .gallery-filter .btn-filter:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    body.dark-mode .hero-stats .stat p {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .section-title {
+        font-size: 2.2rem;
+      }
+    }
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 100px;
+        text-align: center;
+      }
+      .hero p {
+        margin: 16px auto 0;
+      }
+      .hero-btns {
+        justify-content: center;
+      }
+      .hero-stats {
+        justify-content: center;
+        gap: 24px;
+      }
+      .section-padding {
+        padding: 50px 0;
+      }
+      .clients-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+      .client-chip {
+        font-size: 0.7rem;
+        min-height: 60px;
+        padding: 8px 6px;
+      }
+      .logo-text .brand-main {
+        font-size: 1.1rem;
+      }
+      .logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
+      .contact-info-card {
+        padding: 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero-stats .stat h3 {
+        font-size: 1.6rem;
+      }
+      .clients-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      }
+      .client-chip {
+        font-size: 0.6rem;
+        min-height: 50px;
+        padding: 6px 4px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- ─── PARTICLES ─── -->
-    <div class="hero" id="home">
-        <div class="particle" style="width:60px;height:60px;top:10%;left:5%;animation-duration:8s;animation-delay:0s;"></div>
-        <div class="particle" style="width:30px;height:30px;top:20%;right:10%;animation-duration:6s;animation-delay:1s;"></div>
-        <div class="particle" style="width:80px;height:80px;bottom:30%;left:8%;animation-duration:10s;animation-delay:2s;"></div>
-        <div class="particle" style="width:40px;height:40px;top:60%;right:5%;animation-duration:7s;animation-delay:0.5s;"></div>
-        <div class="particle" style="width:20px;height:20px;top:40%;left:50%;animation-duration:9s;animation-delay:1.5s;"></div>
-
-        <!-- ─── NAVBAR ─── -->
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Shree<span>Multi</span></a>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navMenu">
-                    <ul class="navbar-nav ms-auto align-items-center gap-1">
-                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#locations">Locations</a></li>
-                        <li class="nav-item"><a class="nav-link nav-cta" href="#contact">Get Quote</a></li>
-                        <li class="nav-item">
-                            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                                <i class="bi bi-moon-fill"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- ─── HERO CONTENT ─── -->
-        <div class="container" style="position:relative;z-index:2;">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
-                    <span class="hero-badge" style="background: rgba(212,42,42,0.1); color: var(--primary); padding:6px 20px; border-radius:50px; font-weight:600; font-size:0.85rem; display:inline-block; margin-bottom:16px;">
-                        <i class="bi bi-award-fill me-1"></i> 14+ Years of Excellence
-                    </span>
-                    <h1>We Provide the Best <br /><span class="gradient-text">Business Solutions</span></h1>
-                    <p>Creative, reliable, and result-oriented advertising services to help your brand grow with measurable impact.</p>
-                    <div class="hero-btns">
-                        <a href="#contact" class="btn btn-primary-custom">Get Quote <i class="bi bi-arrow-right ms-1"></i></a>
-                        <a href="#services" class="btn btn-outline-custom">Explore Services</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <h3><span class="counter" data-target="14">0</span>+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat">
-                            <h3><span class="counter" data-target="1000">0</span>+</h3>
-                            <p>Projects Delivered</p>
-                        </div>
-                        <div class="stat">
-                            <h3><span class="counter" data-target="6">0</span>+</h3>
-                            <p>States Covered</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
-                    <div class="hero-image-wrap" id="heroImageWrap">
-                        <img src="https://placehold.co/600x450/1a1a2e/ffffff?text=Shree+Multi+Service" alt="Shree Multi Service" />
-                        <div class="floating-card">
-                            <i class="bi bi-trophy-fill"></i>
-                            <div><strong>Trusted Partner</strong><br /><small>Since 2012</small></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div class="logo-wrapper">
+          <div class="logo-icon"><i class="bi bi-bullseye"></i></div>
+          <div class="logo-text">
+            <span class="brand-main">Shree<span>Multi</span></span>
+            <span class="brand-sub">Advertising Material Provider <span class="gst">| GST: 27BJMPD0361H1ZE</span></span>
+          </div>
         </div>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" href="#contact">Get Quote</a></li>
+          <li class="nav-item"><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="bi bi-moon-fill"></i></button></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- ─── ABOUT ─── -->
-    <section class="about-section section-padding" id="about">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="badge-red">About Us</span>
-                <h2 class="section-title">Driven by Vision &amp; Mission</h2>
-                <p class="section-subtitle">We combine creativity, innovation, and reliability to deliver advertising solutions that drive real business growth.</p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-right">
-                    <div class="vision-mission" style="background:#fff; border-radius:var(--radius); padding:40px; box-shadow:var(--shadow);">
-                        <div class="vm-item mb-3" style="padding:20px; border-left:4px solid var(--primary); background:var(--primary-light); border-radius:8px;">
-                            <h5><i class="bi bi-eye me-2"></i> Vision</h5>
-                            <p class="mb-0">To become the most trusted and result-driven advertising partner, empowering brands to grow through innovative and impactful marketing solutions.</p>
-                        </div>
-                        <div class="vm-item" style="padding:20px; border-left:4px solid var(--primary); background:var(--primary-light); border-radius:8px;">
-                            <h5><i class="bi bi-rocket-takeoff me-2"></i> Mission</h5>
-                            <p class="mb-0">To deliver creative, reliable, and result-oriented advertising services that help our clients increase visibility, build brand value, and achieve measurable business growth.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-left">
-                    <div class="about-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:24px;">
-                        <div class="about-item">
-                            <i class="bi bi-briefcase-fill"></i>
-                            <h5>Complete Solutions</h5>
-                            <p>End-to-end advertising under one roof</p>
-                        </div>
-                        <div class="about-item">
-                            <i class="bi bi-lightning-fill"></i>
-                            <h5>Fast &amp; Reliable</h5>
-                            <p>Timely delivery with quality assurance</p>
-                        </div>
-                        <div class="about-item">
-                            <i class="bi bi-people-fill"></i>
-                            <h5>Expert Team</h5>
-                            <p>Experienced professionals at your service</p>
-                        </div>
-                        <div class="about-item">
-                            <i class="bi bi-cash-coin"></i>
-                            <h5>Competitive Pricing</h5>
-                            <p>Best value for your investment</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <span class="badge-red" style="background:rgba(212,42,42,0.1);color:var(--primary);">14+ Years of Excellence</span>
+          <h1>We Provide the Best <br><span class="gradient-text">Business Solutions</span></h1>
+          <p>Creative, reliable, and result-oriented advertising services to help your brand grow with measurable impact.</p>
+          <div class="hero-btns">
+            <a href="#contact" class="btn btn-primary-custom">Get Quote <i class="bi bi-arrow-right"></i></a>
+            <a href="#services" class="btn btn-outline-custom">Explore Services</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><h3><span class="counter" data-target="14">0</span>+</h3><p>Years Experience</p></div>
+            <div class="stat"><h3><span class="counter" data-target="1000">0</span>+</h3><p>Projects Delivered</p></div>
+            <div class="stat"><h3><span class="counter" data-target="6">0</span>+</h3><p>States Covered</p></div>
+          </div>
         </div>
-    </section>
-
-    <!-- ─── SERVICES ─── -->
-    <section class="services-section section-padding" id="services">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="badge-red">What We Do</span>
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">From vehicle branding to large-format hoardings and event activations — we cover it all.</p>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="card-3d" id="heroCard">
+            <div class="card-3d-inner">
+              <img src="https://placehold.co/600x450/1a1a2e/ffffff?text=Shree+Multi+Service" alt="Shree Multi Service" class="rounded-4 shadow-lg" />
             </div>
-
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="0">
-                    <div class="service-card">
-                        <span class="tag">Popular</span>
-                        <div class="icon-wrap"><i class="bi bi-truck"></i></div>
-                        <h5>Vehicle Branding</h5>
-                        <p>L-Shape, T-Shape, Hut-Shape, LED Demo Vans</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="50">
-                    <div class="service-card">
-                        <div class="icon-wrap"><i class="bi bi-tv"></i></div>
-                        <h5>LED Demo Van</h5>
-                        <p>Mobile LED display vans for brand promotion</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <div class="icon-wrap"><i class="bi bi-bricks"></i></div>
-                        <h5>Hoardings &amp; Boards</h5>
-                        <p>Glow sign, acrylic, vinyl, frame, and arch gates</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150">
-                    <div class="service-card">
-                        <div class="icon-wrap"><i class="bi bi-shop"></i></div>
-                        <h5>Shop Branding</h5>
-                        <p>Fix &amp; rotating boards, non-light boards</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="icon-wrap"><i class="bi bi-calendar-event"></i></div>
-                        <h5>Events &amp; Expo</h5>
-                        <p>Agro Expo, crop shows, farmer meetings</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="250">
-                    <div class="service-card">
-                        <div class="icon-wrap"><i class="bi bi-box-seam"></i></div>
-                        <h5>Custom Stalls</h5>
-                        <p>Fabric, modular, and customized stalls</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <div class="icon-wrap"><i class="bi bi-bag"></i></div>
-                        <h5>Branding Materials</h5>
-                        <p>T-shirts, caps, bags, trophies, standees</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="350">
-                    <div class="service-card">
-                        <div class="icon-wrap"><i class="bi bi-flag"></i></div>
-                        <h5>Feather Flags &amp; Bunting</h5>
-                        <p>Tape, bunting, and promotional flags</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ─── GALLERY ─── -->
-    <section class="gallery-section section-padding" id="gallery">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="badge-red">Portfolio</span>
-                <h2 class="section-title">Our Work</h2>
-                <p class="section-subtitle">A glimpse of our branding and advertising projects across Central India.</p>
+  <!-- ===== ABOUT ===== -->
+  <section class="about-section section-padding" id="about">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <span class="badge-red">About Us</span>
+        <h2 class="section-title">Driven by Vision &amp; Mission</h2>
+        <p class="section-subtitle">We combine creativity, innovation, and reliability to deliver advertising solutions that drive real business growth.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="glass p-4 h-100">
+            <div class="p-3 mb-3 border-start border-4 border-primary bg-white bg-opacity-50 rounded-3">
+              <h5><i class="bi bi-eye me-2"></i> Vision</h5>
+              <p class="mb-0">"To become the most trusted and result-driven advertising partner, empowering brands to grow through innovative and impactful marketing solutions."</p>
             </div>
-
-            <div class="gallery-filter" data-aos="fade-up" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px;">
-                <button class="btn-filter active" data-filter="all" style="padding:8px 24px;border-radius:50px;border:2px solid #ddd;background:transparent;font-weight:600;transition:var(--transition);">All</button>
-                <button class="btn-filter" data-filter="van" style="padding:8px 24px;border-radius:50px;border:2px solid #ddd;background:transparent;font-weight:600;transition:var(--transition);">Van</button>
-                <button class="btn-filter" data-filter="hoarding" style="padding:8px 24px;border-radius:50px;border:2px solid #ddd;background:transparent;font-weight:600;transition:var(--transition);">Hoardings</button>
-                <button class="btn-filter" data-filter="shop" style="padding:8px 24px;border-radius:50px;border:2px solid #ddd;background:transparent;font-weight:600;transition:var(--transition);">Shop</button>
-                <button class="btn-filter" data-filter="expo" style="padding:8px 24px;border-radius:50px;border:2px solid #ddd;background:transparent;font-weight:600;transition:var(--transition);">Expo</button>
-                <button class="btn-filter" data-filter="stall" style="padding:8px 24px;border-radius:50px;border:2px solid #ddd;background:transparent;font-weight:600;transition:var(--transition);">Stalls</button>
+            <div class="p-3 border-start border-4 border-primary bg-white bg-opacity-50 rounded-3">
+              <h5><i class="bi bi-rocket-takeoff me-2"></i> Mission</h5>
+              <p class="mb-0">"Our mission is to deliver creative, reliable, and result-oriented advertising services that help our clients increase visibility, build brand value, and achieve measurable business growth."</p>
             </div>
-
-            <div class="gallery-grid" id="galleryGrid" data-aos="fade-up" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;"></div>
+            <div class="mt-4">
+              <h6 class="fw-bold"><i class="bi bi-check-circle-fill text-primary me-2"></i>Why Choose Us?</h6>
+              <div class="row g-2 mt-2">
+                <div class="col-6"><span class="badge bg-white bg-opacity-50 text-dark border-0 w-100 py-2">✓ Complete Solutions</span></div>
+                <div class="col-6"><span class="badge bg-white bg-opacity-50 text-dark border-0 w-100 py-2">✓ Creative & Result-Oriented</span></div>
+                <div class="col-6"><span class="badge bg-white bg-opacity-50 text-dark border-0 w-100 py-2">✓ Fast & Reliable</span></div>
+                <div class="col-6"><span class="badge bg-white bg-opacity-50 text-dark border-0 w-100 py-2">✓ Experienced Team</span></div>
+                <div class="col-6"><span class="badge bg-white bg-opacity-50 text-dark border-0 w-100 py-2">✓ Competitive Pricing</span></div>
+                <div class="col-6"><span class="badge bg-white bg-opacity-50 text-dark border-0 w-100 py-2">✓ Strong Network</span></div>
+                <div class="col-12"><span class="badge bg-white bg-opacity-50 text-dark border-0 w-100 py-2">✓ Focus on Your Growth</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- ─── CLIENTS (Marquee) ─── -->
-    <section class="clients-section" id="clients" style="background:#fff;padding:60px 0;">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="badge-red">Trusted By</span>
-                <h2 class="section-title">Our Clients</h2>
-                <p class="section-subtitle">The chemistry of success at work — we partner with brands that trust our expertise.</p>
-            </div>
-            <div class="marquee-wrapper" data-aos="fade-up">
-                <div class="marquee-track">
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Coromandel</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Bayer</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Syngenta</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Gharda</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>UPL</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Godrej</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Tata</span>
-                    <!-- Duplicate for seamless loop -->
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Coromandel</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Bayer</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Syngenta</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Gharda</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>UPL</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Godrej</span>
-                    <span class="client-logo"><i class="bi bi-building me-2"></i>Tata</span>
-                </div>
-            </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="row g-3">
+            <div class="col-6"><div class="about-item"><i class="bi bi-briefcase-fill"></i><h5>Complete Solutions</h5><p>End-to-end advertising</p></div></div>
+            <div class="col-6"><div class="about-item"><i class="bi bi-lightning-fill"></i><h5>Fast & Reliable</h5><p>Timely delivery</p></div></div>
+            <div class="col-6"><div class="about-item"><i class="bi bi-people-fill"></i><h5>Expert Team</h5><p>Experienced professionals</p></div></div>
+            <div class="col-6"><div class="about-item"><i class="bi bi-cash-coin"></i><h5>Competitive Pricing</h5><p>Best value</p></div></div>
+            <div class="col-12"><div class="about-item"><i class="bi bi-clock-history"></i><h5>14 Years Experience</h5><p>14 years in agri-inputs & 7+ in advertising</p></div></div>
+          </div>
+          <div class="row g-3 mt-2">
+            <div class="col-6"><div class="glass p-3 h-100"><i class="bi bi-award-fill text-primary fs-2"></i><h6>Best Service Standards</h6><small class="text-muted">Across Central India</small></div></div>
+            <div class="col-6"><div class="glass p-3 h-100"><i class="bi bi-palette-fill text-primary fs-2"></i><h6>Customized Solutions</h6><small class="text-muted">For your brand & budget</small></div></div>
+            <div class="col-12"><div class="glass p-3"><i class="bi bi-diagram-3-fill text-primary fs-2"></i><h6>End to End Solution</h6><small class="text-muted">With responsible project management</small></div></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ─── LOCATIONS ─── -->
-    <section class="locations-section section-padding" id="locations">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="badge-red">Where We Work</span>
-                <h2 class="section-title">Working Locations</h2>
-                <p class="section-subtitle">Serving across Central India with a strong presence in 6 states.</p>
-            </div>
+  <!-- ===== SERVICES ===== -->
+  <section class="section-padding" id="services">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <span class="badge-red">What We Do</span>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">From vehicle branding to large-format hoardings and event activations — we cover it all.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="0"><div class="service-card"><span class="tag">Popular</span><div class="icon-wrap"><i class="bi bi-truck"></i></div><h5>Vehicle Branding</h5><p>L-Shape, T-Shape, LED Demo Vans</p></div></div>
+        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="50"><div class="service-card"><div class="icon-wrap"><i class="bi bi-tv"></i></div><h5>LED Demo Van</h5><p>Mobile LED display vans</p></div></div>
+        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100"><div class="service-card"><div class="icon-wrap"><i class="bi bi-bricks"></i></div><h5>Hoardings & Boards</h5><p>Glow sign, acrylic, vinyl, arch gates</p></div></div>
+        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150"><div class="service-card"><div class="icon-wrap"><i class="bi bi-shop"></i></div><h5>Shop Branding</h5><p>Fix & rotating boards</p></div></div>
+        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200"><div class="service-card"><div class="icon-wrap"><i class="bi bi-calendar-event"></i></div><h5>Events & Expo</h5><p>Agro Expo, crop shows, meetings</p></div></div>
+        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="250"><div class="service-card"><div class="icon-wrap"><i class="bi bi-box-seam"></i></div><h5>Custom Stalls</h5><p>Fabric, modular stalls</p></div></div>
+        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300"><div class="service-card"><div class="icon-wrap"><i class="bi bi-bag"></i></div><h5>Branding Materials</h5><p>T-shirts, caps, bags, trophies</p></div></div>
+        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="350"><div class="service-card"><div class="icon-wrap"><i class="bi bi-flag"></i></div><h5>Flags & Bunting</h5><p>Tape, bunting, promotional flags</p></div></div>
+      </div>
+    </div>
+  </section>
 
-            <div class="text-center" data-aos="fade-up">
-                <div class="d-flex flex-wrap justify-content-center">
-                    <span class="location-chip"><i class="bi bi-geo-alt-fill"></i>Maharashtra</span>
-                    <span class="location-chip"><i class="bi bi-geo-alt-fill"></i>Madhya Pradesh</span>
-                    <span class="location-chip"><i class="bi bi-geo-alt-fill"></i>Chhattisgarh</span>
-                    <span class="location-chip"><i class="bi bi-geo-alt-fill"></i>Gujarat</span>
-                    <span class="location-chip"><i class="bi bi-geo-alt-fill"></i>Telangana</span>
-                    <span class="location-chip"><i class="bi bi-geo-alt-fill"></i>Karnataka</span>
-                </div>
-                <div class="mt-3 d-flex flex-wrap justify-content-center">
-                    <span class="location-chip">Amravati</span>
-                    <span class="location-chip">Nagpur</span>
-                    <span class="location-chip">Akola</span>
-                    <span class="location-chip">Nashik</span>
-                    <span class="location-chip">Jalna</span>
-                    <span class="location-chip">Sangli</span>
-                    <span class="location-chip">Indore</span>
-                    <span class="location-chip">Raipur</span>
-                    <span class="location-chip">Ahmedabad</span>
-                </div>
-            </div>
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery-section section-padding" id="gallery">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <span class="badge-red">Portfolio</span>
+        <h2 class="section-title">Our Work</h2>
+        <p class="section-subtitle">A glimpse of our branding and advertising projects across Central India.</p>
+      </div>
+      <div class="gallery-filter" data-aos="fade-up">
+        <button class="btn-filter active" data-filter="all">All</button>
+        <button class="btn-filter" data-filter="van">Van</button>
+        <button class="btn-filter" data-filter="hoarding">Hoardings</button>
+        <button class="btn-filter" data-filter="shop">Shop</button>
+        <button class="btn-filter" data-filter="expo">Expo</button>
+        <button class="btn-filter" data-filter="stall">Stalls</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid" data-aos="fade-up"></div>
+    </div>
+  </section>
 
-            <div class="map-container" data-aos="fade-up" style="border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:24px;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29768.031862695!2d77.7338!3d20.9375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6a7a1c7b5a1b3%3A0x6b8b9c9a1b2c3d4e!2sAmravati%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+  <!-- ===== CLIENTS ===== -->
+  <section class="section-padding" id="clients" style="background:#fff;">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <span class="badge-red">Trusted By</span>
+        <h2 class="section-title">Our Clients</h2>
+        <p class="section-subtitle">The chemistry of success at work — we partner with brands that trust our expertise.</p>
+      </div>
+      <div class="clients-grid" data-aos="fade-up" id="clientsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why-section section-padding" id="why">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <span class="badge-red" style="background:rgba(255,255,255,0.15);color:#fff;">Why Us</span>
+        <h2 class="section-title" style="color:#fff;">Why Should We Be Your First Choice?</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.7);">We combine experience, innovation, and a client-first approach to deliver outstanding results.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0"><div class="why-card"><div class="number">14+</div><h5>Years of Experience</h5><p>In agri-inputs & advertising</p></div></div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="why-card"><div class="number">100%</div><h5>Result-Oriented</h5><p>Creative work that drives growth</p></div></div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="why-card"><div class="number">6+</div><h5>States Covered</h5><p>Strong network across Central India</p></div></div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="why-card"><div class="number">✓</div><h5>Customized Solutions</h5><p>Tailored for your brand & budget</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section-padding" id="contact">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <span class="badge-red">Get In Touch</span>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-subtitle">Have a project in mind? Reach out to us and let's bring your brand to life.</p>
+        <a href="https://drive.google.com/file/d/1BTpg8aaIupyFGZLa5SiIXVZ1H-OV2zRG/view?usp=sharing" target="_blank" class="btn btn-primary-custom" style="background: #1a73e8; box-shadow: 0 8px 24px rgba(26,115,232,0.3);">
+          <i class="bi bi-file-pdf-fill me-2"></i> Download Brochure (PDF)
+        </a>
+      </div>
+      <div class="row g-5 mt-4">
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="contact-info-card">
+            <i class="bi bi-telephone-fill"></i>
+            <div><strong>Phone</strong><br><a href="tel:+919420484823">+91 94204 84823</a></div>
+          </div>
+          <div class="contact-info-card">
+            <i class="bi bi-envelope-fill"></i>
+            <div><strong>Email</strong><br><a href="mailto:tushar.diwan@shrimultyservices.co.in">tushar.diwan@shrimultyservices.co.in</a></div>
+          </div>
+          <div class="contact-info-card">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div><strong>Head Office</strong><br>01 Rangoli Laxmi Apartment, Tirupati Nagar, Kathora Road, Amravati-444604</div>
+          </div>
+          <div class="mt-3">
+            <a href="https://wa.me/919420484823" target="_blank" class="btn btn-primary-custom" style="background:#25d366;box-shadow:0 8px 24px rgba(37,211,102,0.35);">
+              <i class="bi bi-whatsapp me-2"></i>Chat on WhatsApp
+            </a>
+          </div>
         </div>
-    </section>
-
-    <!-- ─── WHY CHOOSE US ─── -->
-    <section class="why-section section-padding" id="why" style="background:var(--secondary);color:#fff;">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="badge-red" style="background:rgba(255,255,255,0.15);color:#fff;">Why Us</span>
-                <h2 class="section-title" style="color:#fff;">Why Should We Be Your First Choice?</h2>
-                <p class="section-subtitle" style="color:rgba(255,255,255,0.7);">We combine experience, innovation, and a client-first approach to deliver outstanding results.</p>
+        <div class="col-lg-7" data-aos="fade-left">
+          <form class="contact-form" id="contactForm">
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label">Full Name</label><input type="text" class="form-control" placeholder="Your name" required></div>
+              <div class="col-md-6"><label class="form-label">Email Address</label><input type="email" class="form-control" placeholder="Your email" required></div>
+              <div class="col-12"><label class="form-label">Phone Number</label><input type="tel" class="form-control" placeholder="Your phone"></div>
+              <div class="col-12"><label class="form-label">Service Needed</label><select class="form-select"><option>Vehicle Branding</option><option>Hoardings & Boards</option><option>Shop Branding</option><option>Events & Expo</option><option>Custom Stalls</option><option>Branding Materials</option><option>Other</option></select></div>
+              <div class="col-12"><label class="form-label">Message</label><textarea class="form-control" rows="4" placeholder="Tell us about your project..."></textarea></div>
+              <div class="col-12"><button type="submit" class="btn btn-primary-custom w-100">Send Inquiry <i class="bi bi-send ms-1"></i></button></div>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-                    <div class="why-card">
-                        <div class="number">14+</div>
-                        <h5>Years of Experience</h5>
-                        <p>In sales &amp; marketing of agri-inputs and advertising</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="why-card">
-                        <div class="number">100%</div>
-                        <h5>Result-Oriented</h5>
-                        <p>Creative work that drives measurable growth</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="why-card">
-                        <div class="number">6+</div>
-                        <h5>States Covered</h5>
-                        <p>Strong market network across Central India</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="why-card">
-                        <div class="number">✓</div>
-                        <h5>Customized Solutions</h5>
-                        <p>Tailored for your brand, budget &amp; timelines</p>
-                    </div>
-                </div>
-            </div>
+          </form>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ─── CONTACT ─── -->
-    <section class="contact-section section-padding" id="contact" style="background:#fff;">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="badge-red">Get In Touch</span>
-                <h2 class="section-title">Let's Work Together</h2>
-                <p class="section-subtitle">Have a project in mind? Reach out to us and let's bring your brand to life.</p>
-            </div>
-
-            <div class="row g-5">
-                <div class="col-lg-5" data-aos="fade-right">
-                    <div class="contact-info-card">
-                        <i class="bi bi-telephone-fill"></i>
-                        <div><strong>Phone</strong><br /><a href="tel:+919420484823">+91 94204 84823</a></div>
-                    </div>
-                    <div class="contact-info-card">
-                        <i class="bi bi-envelope-fill"></i>
-                        <div><strong>Email</strong><br /><a href="mailto:tushar.diwan@shrimultyservices.co.in">tushar.diwan@shrimultyservices.co.in</a></div>
-                    </div>
-                    <div class="contact-info-card">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <div><strong>Head Office</strong><br />01 Rangoli Laxmi Apartment, Tirupati Nagar, Kathora Road, Amravati-444604</div>
-                    </div>
-                    <div class="contact-info-card">
-                        <i class="bi bi-globe"></i>
-                        <div><strong>Website</strong><br /><a href="https://www.shrimultyservices.co.in" target="_blank">www.shrimultyservices.co.in</a></div>
-                    </div>
-                    <div class="mt-3">
-                        <a href="https://wa.me/919420484823" target="_blank" class="btn btn-primary-custom" style="background:#25d366;box-shadow:0 8px 24px rgba(37,211,102,0.35);">
-                            <i class="bi bi-whatsapp me-2"></i>Chat on WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-7" data-aos="fade-left">
-                    <form class="contact-form" id="contactForm">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Full Name</label>
-                                <input type="text" class="form-control" placeholder="Your name" required style="border-radius:12px;padding:14px 18px;border:2px solid #e8ecf2;transition:var(--transition);" />
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Email Address</label>
-                                <input type="email" class="form-control" placeholder="Your email" required style="border-radius:12px;padding:14px 18px;border:2px solid #e8ecf2;transition:var(--transition);" />
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Your phone" style="border-radius:12px;padding:14px 18px;border:2px solid #e8ecf2;transition:var(--transition);" />
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Service Needed</label>
-                                <select class="form-select" style="border-radius:12px;padding:14px 18px;border:2px solid #e8ecf2;transition:var(--transition);">
-                                    <option>Vehicle Branding</option>
-                                    <option>Hoardings & Boards</option>
-                                    <option>Shop Branding</option>
-                                    <option>Events & Expo</option>
-                                    <option>Custom Stalls</option>
-                                    <option>Branding Materials</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-control" rows="4" placeholder="Tell us about your project..." style="border-radius:12px;padding:14px 18px;border:2px solid #e8ecf2;transition:var(--transition);"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary-custom w-100">Send Inquiry <i class="bi bi-send ms-1"></i></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="logo-wrapper mb-3">
+            <div class="logo-icon" style="background:var(--primary);"><i class="bi bi-bullseye"></i></div>
+            <div class="logo-text"><span class="brand-main" style="color:#fff;">Shree<span style="color:var(--primary);">Multi</span></span><span class="brand-sub" style="color:rgba(255,255,255,0.6);">Advertising Material Provider <span style="color:var(--primary);">| GST: 27BJMPD0361H1ZE</span></span></div>
+          </div>
+          <p>Creative, reliable, and result-oriented advertising solutions since 2012.</p>
+          <div class="social"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i class="bi bi-linkedin"></i></a></div>
         </div>
-    </section>
+        <div class="col-lg-2 col-md-4"><h5>Quick Links</h5><div><a href="#home">Home</a></div><div><a href="#about">About</a></div><div><a href="#services">Services</a></div><div><a href="#gallery">Gallery</a></div><div><a href="#contact">Contact</a></div></div>
+        <div class="col-lg-3 col-md-4"><h5>Services</h5><div><a href="#services">Vehicle Branding</a></div><div><a href="#services">Hoardings</a></div><div><a href="#services">Shop Branding</a></div><div><a href="#services">Events & Expo</a></div><div><a href="#services">Custom Stalls</a></div></div>
+        <div class="col-lg-3 col-md-4"><h5>Contact</h5><div><i class="bi bi-telephone me-2"></i>+91 94204 84823</div><div><i class="bi bi-envelope me-2"></i>tushar.diwan@shrimultyservices.co.in</div><div><i class="bi bi-geo-alt me-2"></i>Amravati, Maharashtra</div></div>
+      </div>
+      <div class="footer-bottom text-center pt-4 mt-4 border-top border-secondary"><small>&copy; 2026 Shree Multi Service. All rights reserved. Made with <i class="bi bi-heart-fill" style="color:var(--primary);"></i></small></div>
+    </div>
+  </footer>
 
-    <!-- ─── FOOTER ─── -->
-    <footer class="footer" style="background:var(--secondary);color:rgba(255,255,255,0.7);padding:48px 0 24px;">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h5 style="color:#fff;font-weight:700;">Shree Multi Service</h5>
-                    <p>Creative, reliable, and result-oriented advertising solutions since 2012. We help brands grow with innovative marketing.</p>
-                    <div class="social">
-                        <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.06);margin-right:8px;transition:var(--transition);color:#fff;"><i class="bi bi-facebook"></i></a>
-                        <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.06);margin-right:8px;transition:var(--transition);color:#fff;"><i class="bi bi-instagram"></i></a>
-                        <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.06);margin-right:8px;transition:var(--transition);color:#fff;"><i class="bi bi-youtube"></i></a>
-                        <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.06);margin-right:8px;transition:var(--transition);color:#fff;"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5 style="color:#fff;font-weight:700;">Quick Links</h5>
-                    <div><a href="#home" style="color:rgba(255,255,255,0.6);transition:var(--transition);">Home</a></div>
-                    <div><a href="#about" style="color:rgba(255,255,255,0.6);transition:var(--transition);">About</a></div>
-                    <div><a href="#services" style="color:rgba(255,255,255,0.6);transition:var(--transition);">Services</a></div>
-                    <div><a href="#gallery" style="color:rgba(255,255,255,0.6);transition:var(--transition);">Gallery</a></div>
-                    <div><a href="#contact" style="color:rgba(255,255,255,0.6);transition:var(--transition);">Contact</a></div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 style="color:#fff;font-weight:700;">Services</h5>
-                    <div><a href="#services" style="color:rgba(255,255,255,0.6);transition:var(--transition);">Vehicle Branding</a></div>
-                    <div><a href="#services" style="color:rgba(255,255,255,0.6);transition:var(--transition);">Hoardings</a></div>
-                    <div><a href="#services" style="color:rgba(255,255,255,0.6);transition:var(--transition);">Shop Branding</a></div>
-                    <div><a href="#services" style="color:rgba(255,255,255,0.6);transition:var(--transition);">Events &amp; Expo</a></div>
-                    <div><a href="#services" style="color:rgba(255,255,255,0.6);transition:var(--transition);">Custom Stalls</a></div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 style="color:#fff;font-weight:700;">Contact</h5>
-                    <div><i class="bi bi-telephone me-2"></i>+91 94204 84823</div>
-                    <div><i class="bi bi-envelope me-2"></i>tushar.diwan@shrimultyservices.co.in</div>
-                    <div><i class="bi bi-geo-alt me-2"></i>Amravati, Maharashtra</div>
-                </div>
-            </div>
-            <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;margin-top:32px;text-align:center;font-size:0.9rem;">
-                &copy; 2026 Shree Multi Service. All rights reserved. Designed with <i class="bi bi-heart-fill" style="color:var(--primary);"></i>
-            </div>
-        </div>
-    </footer>
+  <!-- ===== FLOATING ELEMENTS ===== -->
+  <a href="https://wa.me/919420484823" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+  <button id="scrollTop" aria-label="Scroll to top"><i class="bi bi-chevron-up"></i></button>
 
-    <!-- ─── FLOATING ELEMENTS ─── -->
-    <a href="https://wa.me/919420484823" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-    </a>
-    <button id="scrollTop" aria-label="Scroll to top">
-        <i class="bi bi-chevron-up"></i>
-    </button>
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+    /* ===== script.js ===== */
 
-    <!-- ─── SCRIPTS ─── -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-    </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-    </script>
+    // AOS Init
+    AOS.init({
+      once: false,
+      offset: 40,
+      duration: 800,
+      easing: 'ease-out-cubic'
+    });
 
-    <script>
-        // ─── AOS ───
-        AOS.init({
-            once: false,
-            offset: 40,
-            duration: 800,
-            easing: 'ease-out-cubic',
-        });
+    // Dark Mode
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.className = 'bi bi-sun-fill';
+    }
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
 
-        // ─── Dark Mode ───
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        const icon = themeToggle.querySelector('i');
+    // Scroll to Top
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-mode');
-            icon.className = 'bi bi-sun-fill';
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          let current = 0;
+          const increment = target / 60;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              el.textContent = target;
+              clearInterval(timer);
+            } else {
+              el.textContent = Math.floor(current);
+            }
+          }, 20);
+          counterObserver.unobserve(el);
         }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
 
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const isDark = body.classList.contains('dark-mode');
-            icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        });
+    // Gallery
+    const galleryData = [
+      { id: 1, category: 'van', src: 'https://placehold.co/400x400/d42a2a/ffffff?text=Van+1' },
+      { id: 2, category: 'van', src: 'https://placehold.co/400x400/b01e1e/ffffff?text=Van+2' },
+      { id: 3, category: 'hoarding', src: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Hoard+1' },
+      { id: 4, category: 'hoarding', src: 'https://placehold.co/400x400/2a2a42/ffffff?text=Hoard+2' },
+      { id: 5, category: 'shop', src: 'https://placehold.co/400x400/d42a2a/ffffff?text=Shop+1' },
+      { id: 6, category: 'shop', src: 'https://placehold.co/400x400/b01e1e/ffffff?text=Shop+2' },
+      { id: 7, category: 'expo', src: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Expo+1' },
+      { id: 8, category: 'expo', src: 'https://placehold.co/400x400/2a2a42/ffffff?text=Expo+2' },
+      { id: 9, category: 'stall', src: 'https://placehold.co/400x400/d42a2a/ffffff?text=Stall+1' },
+      { id: 10, category: 'stall', src: 'https://placehold.co/400x400/b01e1e/ffffff?text=Stall+2' },
+      { id: 11, category: 'van', src: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Van+3' },
+      { id: 12, category: 'hoarding', src: 'https://placehold.co/400x400/d42a2a/ffffff?text=Hoard+3' }
+    ];
+    const galleryGrid = document.getElementById('galleryGrid');
 
-        // ─── Scroll to Top ───
-        const scrollBtn = document.getElementById('scrollTop');
-        window.addEventListener('scroll', () => {
-            scrollBtn.classList.toggle('visible', window.scrollY > 400);
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ─── Counter Animation ───
-        const counters = document.querySelectorAll('.counter');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseInt(el.dataset.target);
-                    let current = 0;
-                    const increment = target / 60;
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            el.textContent = target;
-                            clearInterval(timer);
-                        } else {
-                            el.textContent = Math.floor(current);
-                        }
-                    }, 20);
-                    counterObserver.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(c => counterObserver.observe(c));
-
-        // ─── Gallery Data ───
-        const galleryData = [
-            { id: 1, category: 'van', src: 'https://placehold.co/400x400/d42a2a/ffffff?text=Van+1' },
-            { id: 2, category: 'van', src: 'https://placehold.co/400x400/b01e1e/ffffff?text=Van+2' },
-            { id: 3, category: 'hoarding', src: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Hoard+1' },
-            { id: 4, category: 'hoarding', src: 'https://placehold.co/400x400/2a2a42/ffffff?text=Hoard+2' },
-            { id: 5, category: 'shop', src: 'https://placehold.co/400x400/d42a2a/ffffff?text=Shop+1' },
-            { id: 6, category: 'shop', src: 'https://placehold.co/400x400/b01e1e/ffffff?text=Shop+2' },
-            { id: 7, category: 'expo', src: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Expo+1' },
-            { id: 8, category: 'expo', src: 'https://placehold.co/400x400/2a2a42/ffffff?text=Expo+2' },
-            { id: 9, category: 'stall', src: 'https://placehold.co/400x400/d42a2a/ffffff?text=Stall+1' },
-            { id: 10, category: 'stall', src: 'https://placehold.co/400x400/b01e1e/ffffff?text=Stall+2' },
-            { id: 11, category: 'van', src: 'https://placehold.co/400x400/1a1a2e/ffffff?text=Van+3' },
-            { id: 12, category: 'hoarding', src: 'https://placehold.co/400x400/d42a2a/ffffff?text=Hoard+3' },
-        ];
-
-        const galleryGrid = document.getElementById('galleryGrid');
-
-        function renderGallery(filter = 'all') {
-            const filtered = filter === 'all' ? galleryData : galleryData.filter(item => item.category === filter);
-            galleryGrid.innerHTML = filtered.map(item => `
-                <div class="gallery-item" data-category="${item.category}">
-                    <img src="${item.src}" alt="Gallery ${item.id}" loading="lazy" />
-                    <div class="overlay"><i class="bi bi-zoom-in" style="font-size:2rem;"></i></div>
-                </div>
+    function renderGallery(filter = 'all') {
+      const filtered = filter === 'all' ? galleryData : galleryData.filter(item => item.category === filter);
+      galleryGrid.innerHTML = filtered.map(item => `
+              <div class="gallery-item" data-category="${item.category}">
+                <img src="${item.src}" alt="Gallery ${item.id}" loading="lazy">
+                <div class="overlay"><i class="bi bi-zoom-in" style="font-size:2rem;"></i></div>
+              </div>
             `).join('');
-        }
-        renderGallery();
+    }
+    renderGallery();
 
-        // ─── Gallery Filter ───
-        document.querySelectorAll('.btn-filter').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.btn-filter').forEach(b => {
-                    b.classList.remove('active');
-                    b.style.background = 'transparent';
-                    b.style.color = '';
-                    b.style.borderColor = '#ddd';
-                });
-                this.classList.add('active');
-                this.style.background = 'var(--primary)';
-                this.style.color = '#fff';
-                this.style.borderColor = 'var(--primary)';
-                renderGallery(this.dataset.filter);
-            });
-        });
-        // Set initial active style
-        document.querySelector('.btn-filter.active').style.background = 'var(--primary)';
-        document.querySelector('.btn-filter.active').style.color = '#fff';
-        document.querySelector('.btn-filter.active').style.borderColor = 'var(--primary)';
+    document.querySelectorAll('.btn-filter').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        renderGallery(this.dataset.filter);
+      });
+    });
 
-        // ─── Contact Form ───
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your inquiry! We will get back to you shortly.');
-            this.reset();
-        });
+    // Clients List (from brochure)
+    const clientList = [
+      'TVS', 'Amul', 'Eicher Tractors', 'Malabar Gold', 'UPL OpenAg™',
+      'Bayer', 'Corteva Agriscience', 'Adecco', 'Syngenta', 'Agrovet',
+      'BioStadt', 'Swal', 'SML Transforming Agriculture', 'IPL India Pesticides',
+      'Valagro Where excellence starts', 'Gharda Chemicals', 'RAAKAY',
+      'FMC An Agricultural Sciences Company', 'Mahadhan AgriTech',
+      'IFFCO Gujarat AgriTech', 'Rana Building Trust Together',
+      'ICL Building Trust Together', 'Chambal Fertilisers',
+      'Rast SEEDS', 'Mahyco EVERY SEED COUNTS', 'NUZIVeedu Seeds',
+      'Seminis Grow Forward', 'Eag Let\'s Grow!', 'Let\'s Lead', 'Pravaradhan'
+    ];
+    const clientsGrid = document.getElementById('clientsGrid');
+    clientsGrid.innerHTML = clientList.map(name => {
+      const parts = name.split(' ');
+      const main = parts.slice(0, -1).join(' ') || name;
+      const sub = parts.slice(-1).join(' ') === name ? '' : parts.slice(-1).join(' ');
+      return `<div class="client-chip"><i class="bi bi-building"></i>${main}${sub ? `<span class="sub">${sub}</span>` : ''}</div>`;
+    }).join('');
 
-        // ─── Smooth Nav Links ───
-        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelector('.navbar-collapse')?.classList.remove('show');
-            });
-        });
+    // 3D Card Effect on Hero Image
+    const heroCard = document.getElementById('heroCard');
+    if (heroCard) {
+      document.querySelector('.hero').addEventListener('mousemove', (e) => {
+        const rect = heroCard.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroCard.querySelector('.card-3d-inner').style.transform =
+          `rotateY(${x * 8}deg) rotateX(${y * -8}deg)`;
+      });
+      document.querySelector('.hero').addEventListener('mouseleave', () => {
+        heroCard.querySelector('.card-3d-inner').style.transform = 'rotateY(0deg) rotateX(0deg)';
+      });
+    }
 
-        // ─── Subtle Mouse Parallax on Hero Image ───
-        const heroWrap = document.getElementById('heroImageWrap');
-        if (heroWrap) {
-            document.querySelector('.hero').addEventListener('mousemove', (e) => {
-                const rect = heroWrap.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                heroWrap.style.transform = `rotateY(${x * 4}deg) rotateX(${y * -4}deg)`;
-            });
-            document.querySelector('.hero').addEventListener('mouseleave', () => {
-                heroWrap.style.transform = 'rotateY(0deg) rotateX(0deg)';
-                heroWrap.style.transition = 'transform 0.6s ease';
-            });
-            document.querySelector('.hero').addEventListener('mouseenter', () => {
-                heroWrap.style.transition = 'transform 0.1s ease';
-            });
-        }
+    // Contact Form
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your inquiry! We will get back to you shortly.');
+      this.reset();
+    });
 
-        console.log('Shree Multi Service — Enhanced with little effects ✨');
-    </script>
+    // Smooth nav close
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.navbar-collapse')?.classList.remove('show');
+      });
+    });
 
+    console.log('Shree Multi Service — Glass effect added ✨');
+  </script>
 </body>
 </html>
